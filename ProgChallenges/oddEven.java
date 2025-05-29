@@ -1,4 +1,4 @@
-package LaboRaTorY;
+package ProgChallenges;
 import java.util.Scanner;
 
 public class oddEven {
