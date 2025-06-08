@@ -1,0 +1,19 @@
+   //update
+    public void changePIN(String Name, int oldPIN, int newPIN ) {
+        try {
+            Statement st = con().createStatement();
+            String sql = "UPDATE userdata SET PIN = '"+newPIN+"' WHERE Name = '"+Name+"'  AND PIN = "+oldPIN;
+
+            int rowsUpdated = st.executeUpdate(sql); // execute update
+
+            if (rowsUpdated > 0) {
+                System.out.println("PIN updated successfully!");
+            } else {
+                System.out.println("Incorrect current PIN or username not found.");
+            }
+
+            con().close();
+        } catch (SQLException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
